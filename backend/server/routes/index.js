@@ -11,6 +11,9 @@ function init(server) {
     server.get('/', function(req, res) {
         res.sendFile(path.join(__dirname, '../build', 'index.html'));
     });
+    server.get('/testbackend', function (req, res) {
+        res.send("yes");
+    });
 
     server.use('/api', apiRoute);
 };
