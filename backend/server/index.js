@@ -30,7 +30,9 @@ module.exports = function () {
         server.use(cookieParser());
         server.use(logger('dev'));
         server.use(passport.initialize());
-//        require('./configs/passport')(passport);
+        //render the front end
+        app.use(express.static(path.join(__dirname, 'build')));
+        //require('./configs/passport')(passport);
         mongoose.connect(db.database, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, console.log(db.database));
 
         //set up routes

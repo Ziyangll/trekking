@@ -9,7 +9,7 @@ function init(server) {
         return next();
     });
     server.get('/', function(req, res) {
-        res.sendFile(path.join(__dirname, '../../build', 'index.html'));
+        res.sendFile(path.join(__dirname, '../build', 'index.html'));
     });
 
     server.use('/api', apiRoute);
