@@ -11,3 +11,5 @@ Users can:
 * Surprise tips & tricks as they go along the trail
 * and more!
 
+##### As part of Backyard Hack
+##### brought to you by ...
