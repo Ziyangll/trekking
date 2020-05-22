@@ -1,11 +1,10 @@
 import React from 'react';
-import SimpleMap from './map/Map'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <SimpleMap></SimpleMap>
+      <h1> hello world </h1>
     </div>
   );
 }
