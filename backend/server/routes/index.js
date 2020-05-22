@@ -1,6 +1,7 @@
 'use strict';
 
 const apiRoute = require('./apis');
+const path = require('path');
 
 function init(server) {
     server.get('*', function (req, res, next) {
@@ -8,7 +9,7 @@ function init(server) {
         return next();
     });
     server.get('/', function(req, res) {
-        console.log('hello')
+        res.sendFile(path.join(__dirname, '../../build', 'index.html'));
     });
 
     server.use('/api', apiRoute);
