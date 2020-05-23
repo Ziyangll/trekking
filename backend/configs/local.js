@@ -1,7 +1,7 @@
 'use strict';
 
 let localConfig = {
-    hostname: 'localhost', port:3000
+    hostname: 'localhost', port:8080
 };
 
 module.exports = localConfig;
