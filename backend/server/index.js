@@ -8,7 +8,9 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
 const cors = require('cors');
+const dotenv = require('dotenv').config();
 
 module.exports = function () {
     let server = express(),
@@ -30,8 +32,13 @@ module.exports = function () {
         server.use(cookieParser());
         server.use(logger('dev'));
         server.use(passport.initialize());
-//        require('./configs/passport')(passport);
-        mongoose.connect(db.database, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, console.log(db.database));
+        server.use(passport.session());
+        require('../configs/passport')(passport);
+        server.use(cookieSession({
+            name: 'session',
+            keys: ['key1', 'key2']
+          }))
+        mongoose.connect(db.database, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
         //set up routes
         routes.init(server);
