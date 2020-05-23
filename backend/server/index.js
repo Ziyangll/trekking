@@ -21,7 +21,7 @@ module.exports = function () {
 
         //server settings
         server.set('env', config.env);
-        server.set('port', config.port);
+        server.set('port', 8080);
         server.set('hostname', config.hostname);
 
         //return middleware that parses json
