@@ -124,8 +124,8 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
-  color: rgb(12, 0, 116);
+  font-size: 35px;
+  color: rgb(3, 54, 42);
 }
 
 
@@ -161,15 +161,18 @@ h3 {
 }
 
 .service-one {
-  background: url("https://images.unsplash.com/photo-1581094648468-20624f9c771a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")center;
+  background: url("https://cdn.dribbble.com/users/1638854/screenshots/6244494/mar_07_ognisko.gif")center;
+  background-size: contain;
 }
 
 .service-two {
-  background: url("https://images.unsplash.com/photo-1581091870619-835cee86e759?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")center;
+  background: url("https://cdn.dribbble.com/users/1638854/screenshots/6309318/apr_04_miskolarz_dribbble.gif")center;
+  background-size: cover;
 }
 
 .service-three {
-  background: url("https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80")center;
+  background: url("https://cdn.dribbble.com/users/1638854/screenshots/6326234/apr_07_zje_d_alnia_dribbble.gif")center;
+  background-size: contain;
 }
 
 
