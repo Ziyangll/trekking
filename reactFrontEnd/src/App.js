@@ -4,6 +4,7 @@ import trek from './trek.png';
 //import './App.css';
 import Routes from "./routes";
 import { Link, useHistory } from 'react-router-dom';
+import Nav from "./components/Nav";
 
 function App(){
   const history = useHistory();
@@ -37,6 +38,7 @@ function App(){
   return (
     <div className="App">
       <div className="container">
+        <Nav />
         <nav>
           <ul>
             <li><Link to ="/">Trekker</Link></li>
