@@ -2,6 +2,7 @@
   "name": "google-maps-react-2020",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://trekkingnew.space/map",
   "dependencies": {
     "@reach/combobox": "^0.10.2",
     "@react-google-maps/api": "^1.9.0",
