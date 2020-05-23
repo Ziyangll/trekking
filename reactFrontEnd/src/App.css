@@ -7,6 +7,12 @@
   pointer-events: none;
 }
 
+.background{
+  background-image: url("./nature.jpg");
+  background-position: left;
+  background-size: 1078px 803px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
