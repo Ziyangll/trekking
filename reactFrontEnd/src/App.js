@@ -29,7 +29,7 @@ function App(){
   const showContact = path;
   let _contact;
   if(showContact != "/contact"){
-    _contact = (<li><Link to = '/contact'>Contact Me</Link></li>)
+    _contact = (<li><Link to = '/contact'>Explore Now!</Link></li>)
   }
 
   return (
@@ -37,7 +37,7 @@ function App(){
       <div className="container">
         <nav>
           <ul>
-            <li><Link to ="/">Trek Team</Link></li>
+            <li><Link to ="/">Trekker</Link></li>
           </ul>
           <ul>
             {_contact}
