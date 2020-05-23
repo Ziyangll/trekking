@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 // components
 import Main from './components/Main';
 import Contact from './components/Contact';
-import GoogleMap from './components/GoogleMap';
+import GoogleMapComplete from "./components/GoogleMap";
 import Thanks from './components/Thanks';
 import Login from './components/Login';
 import Signin from './components/Signin';
@@ -12,7 +12,10 @@ import Create from "./components/Create";
 
 
 const Routes = () => (
-    <Switch>
+
+  <Switch>
+        <Route exact path="/map" component={GoogleMapComplete} />
+
         <Route exact path="/" component={Main} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/signin" component={Signin} />
@@ -22,6 +25,7 @@ const Routes = () => (
         <Route exact path="/create" component = {Create} />
        
     </Switch>
+
 );
 
 export default Routes;
