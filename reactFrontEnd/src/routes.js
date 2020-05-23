@@ -6,13 +6,21 @@ import Main from './components/Main';
 import Contact from './components/Contact';
 import GoogleMap from './components/GoogleMap';
 import Thanks from './components/Thanks';
+import Login from './components/Login';
+import Signin from './components/Signin';
+import Create from "./components/Create";
+
 
 const Routes = () => (
     <Switch>
         <Route exact path="/" component={Main} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/signin" component={Signin} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/map" component={GoogleMap} />
         <Route exact path="/thanks/:name" component={Thanks} />
+        <Route exact path="/create" component = {Create} />
+       
     </Switch>
 );
 
