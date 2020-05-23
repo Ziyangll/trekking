@@ -4,7 +4,7 @@ import "firebase/firestore";
 import "firebase/storage";
 
 const config = {
-    apiKey: "AIzaSyD0_ij0OW0w2EcjIZ7fKkRVlkOnm3bTsuM",
+    apiKey: {process.env.process.env.REACT_APP_GOOGLE_MAPS_API_KEY},
     authDomain: "trekkingnew.firebaseapp.com",
     databaseURL: "https://trekkingnew.firebaseio.com",
     projectId: "trekkingnew",
