@@ -1,7 +1,8 @@
 'use strict';
 
 const _ = require('lodash');
-const env = process.env.NODE_ENV || 'local';
+//process.env.NODE_ENV
+const env = 'local';
 const envConfig = require('./' + env);
 
 let defaultConfig = {
