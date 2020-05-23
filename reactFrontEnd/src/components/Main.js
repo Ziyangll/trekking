@@ -28,7 +28,7 @@ const Main = () => {
                 <div>
                     <h1>We design &amp; create <br/> trekking trips.</h1>
                     <p>Get away from the hustle and bustle of city life, explore what the nature has to offer. Trekking Team will let you know the destination, packing list. So jet off and explore nature! </p>
-                    <Link to="/contact">Get in Touch</Link>
+                    <Link to="/contact">Explore now</Link>
                 </div>
           
             </header>
@@ -36,14 +36,14 @@ const Main = () => {
 
             <main>
                 <section className="services">
-                     <h2>Why you should go on a trekking trip?</h2>
+                     <h2>Why you should go on a trekking trip with Trekker?</h2>
 
                      <div className="service-container">
                          <div className="services-card service-one"></div>
                          <div className="service-description">
 
-                            <h3>SEO Friendly Apps.</h3>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt massa sem. Vestibulum quis augue ac orci bibendum pellentesque ut nec dolor. Quisque metus ipsum, pulvinar quis ipsum quis, consequat cursus leo. Suspendisse fermentum, nisl et ultricies blandit, mauris metus accumsan mauris, sit amet vulputate elit nunc id libero. Vivamus porta lacus libero, et ullamcorper est volutpat ac. Maecenas eros urna, interdum in lectus nec, tristique semper mauris. Duis finibus nunc sed nulla bibendum, ut ornare tellus finibus. Donec id magna risus.</div>
+                            <h3>Reconnect with nature</h3>
+                            <div>Trekker makes it easy to plan out your next outdoor adventure by giving you all the tools you need through a click of a button.</div>
 
                          </div>
                     </div>
@@ -54,8 +54,9 @@ const Main = () => {
                       
                       <div className="services-card service-two"></div>
                       <div className="service-description">
-                          <h3>Clear &amp; Optimized Code.</h3>
-                          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt massa sem. Vestibulum quis augue ac orci bibendum pellentesque ut nec dolor. Quisque metus ipsum, pulvinar quis ipsum quis, consequat cursus leo. Suspendisse fermentum, nisl et ultricies blandit, mauris metus accumsan mauris, sit amet vulputate elit nunc id libero. Vivamus porta lacus libero, et ullamcorper est volutpat ac. Maecenas eros urna, interdum in lectus nec, tristique semper mauris. Duis finibus nunc sed nulla bibendum, ut ornare tellus finibus. Donec id magna risus.</div>
+                          <h3>Know what to pack</h3>
+                          <div>Trekker cuts the hassle and prepares your backpack for you. So you can never leave unprepared! 
+</div>
                       </div>
                     </div>
 
@@ -64,8 +65,8 @@ const Main = () => {
                     <div className="service-container">
                         <div className="services-card service-three"></div>
                         <div className="service-description">
-                            <h3>Support 24 hours.</h3>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt massa sem. Vestibulum quis augue ac orci bibendum pellentesque ut nec dolor. Quisque metus ipsum, pulvinar quis ipsum quis, consequat cursus leo. Suspendisse fermentum, nisl et ultricies blandit, mauris metus accumsan mauris, sit amet vulputate elit nunc id libero. Vivamus porta lacus libero, et ullamcorper est volutpat ac. Maecenas eros urna, interdum in lectus nec, tristique semper mauris. Duis finibus nunc sed nulla bibendum, ut ornare tellus finibus. Donec id magna risus.</div>
+                            <h3>Navigate Trails like a pro</h3>
+                            <div>Trekker lets you see local trails around you and can even view points of interests and rest stops. </div>
                         </div>
                       
                     </div>
