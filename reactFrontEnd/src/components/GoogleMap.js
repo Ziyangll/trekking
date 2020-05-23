@@ -1,125 +1,98 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
+  withGoogleMap,
+  withScriptjs,
   GoogleMap,
-  useLoadScript,
-} from "@react-google-maps/api";
-import usePlacesAutocomplete, {
-  getGeocode,
-  getLatLng,
-} from "use-places-autocomplete";
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxPopover,
-  ComboboxList,
-  ComboboxOption,
-} from "@reach/combobox";
-
-import "@reach/combobox/styles.css";
+  Marker,
+  InfoWindow,
+} from "react-google-maps";
+import * as trailData from "./data/sample_trails.json";
 import mapStyles from "./mapStyles";
 
-const libraries = ["places"];
-const mapContainerStyle = {
-  height: "100vh",
-  width: "100vw",
-};
-const options = {
-  styles: mapStyles,
-  disableDefaultUI: false,
-  zoomControl: true,
-};
-const center = {
-  lat: 30,
-  lng: -90,
-};
+let center = { lat: 33.518589, lng: -86.810356 };
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(setCenter);
+}
+function setCenter(position) {
+  center = {
+    lat: position.coords.latitude,
+    lng: position.coords.longitude,
+  };
+}
 
-export default function App() {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-    libraries,
-  });
-  const mapRef = React.useRef();
-  const onMapLoad = React.useCallback((map) => {
-    mapRef.current = map;
+function Map() {
+  const [selectedTrail, setSelectedTrail] = useState(null);
+
+  useEffect(() => {
+    const listener = (e) => {
+      if (e.key === "Escape") {
+        setSelectedTrail(null);
+      }
+    };
+    window.addEventListener("keydown", listener);
+
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
   }, []);
-
-  const panTo = React.useCallback(({ lat, lng }) => {
-    mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(14);
-  }, []);
-
-  if (loadError) return "Error";
-  if (!isLoaded) return "Loading...";
 
   return (
-    <div>
+    <GoogleMap
+      defaultZoom={10}
+      defaultCenter={center}
+      defaultOptions={{ styles: mapStyles }}
+    >
+      {trailData.trails.map((trail) => (
+        <Marker
+          key={trail.id}
+          position={{
+            lat: trail.latitude,
+            lng: trail.longitude,
+          }}
+          onClick={() => {
+            setSelectedTrail(trail);
+          }}
+          icon={{
+            url: trail.imgMedium,
+            scaledSize: new window.google.maps.Size(35, 35),
+          }}
+        />
+      ))}
 
-      <Search panTo={panTo} />
-
-      <GoogleMap
-        id="map"
-        mapContainerStyle={mapContainerStyle}
-        zoom={8}
-        center={center}
-        options={options}
-        onLoad={onMapLoad}
-      >
-      </GoogleMap>
-    </div>
+      {selectedTrail && (
+        <InfoWindow
+          onCloseClick={() => {
+            setSelectedTrail(null);
+          }}
+          position={{
+            lat: selectedTrail.latitude,
+            lng: selectedTrail.longitude,
+          }}
+        >
+          <div>
+            <h3>{selectedTrail.name}</h3>
+            <p>{selectedTrail.summary}</p>
+            <p>difficulty: {selectedTrail.difficulty}</p>
+            <p>length: {selectedTrail.length} miles</p>
+            <p>{selectedTrail.stars}/5</p>
+          </div>
+        </InfoWindow>
+      )}
+    </GoogleMap>
   );
 }
 
-function Search({ panTo }) {
-  const {
-    ready,
-    value,
-    suggestions: { status, data },
-    setValue,
-    clearSuggestions,
-  } = usePlacesAutocomplete({
-    requestOptions: {
-      location: { lat: () => 43.6532, lng: () => -79.3832 },
-      radius: 100 * 1000,
-    },
-  });
+const MapWrapped = withScriptjs(withGoogleMap(Map));
 
-  // https://developers.google.com/maps/documentation/javascript/reference/places-autocomplete-service#AutocompletionRequest
-
-  const handleInput = (e) => {
-    setValue(e.target.value);
-  };
-
-  const handleSelect = async (address) => {
-    setValue(address, false);
-    clearSuggestions();
-
-    try {
-      const results = await getGeocode({ address });
-      const { lat, lng } = await getLatLng(results[0]);
-      panTo({ lat, lng });
-    } catch (error) {
-      console.log("😱 Error: ", error);
-    }
-  };
-
+export default function GoogleMapComplete() {
   return (
-    <div className="search">
-      <Combobox onSelect={handleSelect}>
-        <ComboboxInput
-          value={value}
-          onChange={handleInput}
-          disabled={!ready}
-          placeholder="Search"
-        />
-        <ComboboxPopover>
-          <ComboboxList>
-            {status === "OK" &&
-              data.map(({ id, description }) => (
-                <ComboboxOption key={id} value={description} />
-              ))}
-          </ComboboxList>
-        </ComboboxPopover>
-      </Combobox>
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <MapWrapped
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `100%` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
     </div>
   );
 }
