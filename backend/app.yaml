@@ -8,9 +8,3 @@ resources:
   cpu: .5
   memory_gb: 0.5
   disk_size_gb: 10
-
-handlers:
-- url: /.*
-  secure: always
-  redirect_http_response_code: 301
-  script: auto
