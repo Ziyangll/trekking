@@ -20,7 +20,7 @@ const Login = () => {
                 <label htmlFor="email">Email: </label>
                 <input type="email" name="email" onChange= {(e) => setEmail(e.target.value)} />
 
-                <label htmlFor="password">Email: </label>
+                <label htmlFor="password">Password: </label>
                 <input type="password" name="password" onChange= {(e) => setPassword(e.target.value)} />
 
                 <input type="submit" value="login" />
