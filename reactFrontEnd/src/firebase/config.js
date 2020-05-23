@@ -8,7 +8,7 @@ const config = {
     authDomain: "trekkingnew.firebaseapp.com",
     databaseURL: "https://trekkingnew.firebaseio.com",
     projectId: "trekkingnew",
-    storageBucket: "trekkingnew.appspot.com",
+    storageBucket: "gs://trekkingnew.appspot.com",
     messagingSenderId: "940007446386",
     appId: "1:940007446386:web:6cf5cacc12b6ad6304efeb",
     measurementId: "G-358W4QNLNF"
