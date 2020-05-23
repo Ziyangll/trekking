@@ -21,7 +21,7 @@ const Login = () => {
     return(
         <React.Fragment>
             <button className="back" onClick={goBack}> &larr; Go Back</button>
-            <form className="contact" onSubmit={login}>
+            <form className="contact" onSubmit={Login}>
                 <h3>Welcome Back</h3>
                 <label htmlFor="email">Email: </label>
                 <input type="email" name="email" onChange= {(e) => setEmail(e.target.value)} />
