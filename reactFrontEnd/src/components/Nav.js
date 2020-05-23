@@ -33,7 +33,7 @@ const Nav = (props) => {
         }else{
             buttons = (    
                 <React.Fragment>
-                    <li><Link to="/signin">SignIn</Link></li>
+                    <li><Link to="/signin">Sign In</Link></li>
                     <li><Link to="/login">LogIn</Link></li>              
                 </React.Fragment>
                 )
@@ -43,7 +43,7 @@ const Nav = (props) => {
     return(
         <nav>
             <ul>
-                <li><Link to="/"> ReactFirebaseHooks </Link></li>
+                <li><Link to="/"> Main </Link></li>
             </ul>
             <ul>
                 <li><Link to="/create">new post</Link></li>
