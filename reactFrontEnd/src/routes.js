@@ -8,7 +8,6 @@ import GoogleMapComplete from "./components/GoogleMap";
 import Thanks from './components/Thanks';
 import Login from './components/Login';
 import Signin from './components/Signin';
-import Create from "./components/Create";
 
 
 const Routes = () => (
@@ -20,9 +19,9 @@ const Routes = () => (
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/login" component={Login} />
-        
+        <Route exact path="/map" component={GoogleMap} />
         <Route exact path="/thanks/:name" component={Thanks} />
-        <Route exact path="/create" component = {Create} />
+        
        
     </Switch>
 
