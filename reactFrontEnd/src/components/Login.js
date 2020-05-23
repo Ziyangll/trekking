@@ -10,13 +10,19 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [routeRedirect, setRedirect] = useState("");
 
+    const history = useHistory();
+    const goBack = () => {
+        history.goBack();
+    }
+
     const login = () => {
         console.log("login user");
     }
     return(
         <React.Fragment>
-            <form onSubmit={login}>
-                <p>Welcome Back</p>
+            <button className="back" onClick={goBack}> &larr; Go Back</button>
+            <form className="contact" onSubmit={login}>
+                <h3>Welcome Back</h3>
                 <label htmlFor="email">Email: </label>
                 <input type="email" name="email" onChange= {(e) => setEmail(e.target.value)} />
 

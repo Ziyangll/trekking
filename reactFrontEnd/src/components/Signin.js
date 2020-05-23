@@ -1,11 +1,16 @@
 import React , {useState} from "react";
-import { Redirect, withRouter } from "react-router-dom";
+import { Redirect, withRouter, useHistory } from "react-router-dom";
 
 import firebase from "../firebase/config";
 
 const Signin = () =>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const history = useHistory();
+    const goBack = () => {
+        history.goBack();
+    }
 
     const [routeRedirect, setRedirect] = useState(false);
     
@@ -30,8 +35,9 @@ const Signin = () =>{
 
     return(
         <React.Fragment>
-            <form onSubmit={signin}>
-               <p>Create a new Account</p>
+            <button className="back" onClick={goBack}> &larr; Go Back</button>
+            <form className="contact" onSubmit={signin}>
+               <h3>Create a new Account</h3>
                
                <label htmlFor="email">Email: </label>
                <input type="email" name="email" onChange={(e) => setEmail(e.target.value) }/>
