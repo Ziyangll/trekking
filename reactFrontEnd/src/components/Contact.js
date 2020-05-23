@@ -32,16 +32,16 @@ const Contact = () => {
             <form className="contact" onSubmit={sendEmail}>
                 <h2>Sign up today and get ready for a once-in-a-lifetime adventure!</h2>
                 
-                <label htmlFor="title">Message Title: </label>
-                <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} />
-                
-                <label htmlFor="content">Message Content: </label>
-                <textarea name="content"  onChange={(e) => setContent(e.target.value)}  ></textarea>
-            
-                <label htmlFor="email">Contact Email: </label>
+                <label htmlFor="title">User name: </label>
+                <input type="text" name="username" onChange={(e) => setTitle(e.target.value)} />
+
+                <label htmlFor="email">Email: </label>
                 <input type="email" name="email" onChange={(e) => setContactEmail(e.target.value)} />
 
-                <input type="submit" value="Send Message" />
+                <label htmlFor="title">Password: </label>
+                <input type="text" name="password" onChange={(e) => setTitle(e.target.value)} />
+                
+                <input type="submit" value="Sign up" />
             </form>
 
         </React.Fragment>
