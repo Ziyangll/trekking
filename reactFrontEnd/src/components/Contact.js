@@ -30,7 +30,7 @@ const Contact = () => {
            <button className="back" onClick={goBack}> &larr; Go Back</button>
 
             <form className="contact" onSubmit={sendEmail}>
-                <h2>Sign up today and get ready for a once-in-a-lifetime adventure!</h2>
+                <h2>Feel free to drop a message and we will get back to you shortly!</h2>
                 
                 <label htmlFor="title">Message Title: </label>
                 <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} />

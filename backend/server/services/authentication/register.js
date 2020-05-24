@@ -13,7 +13,7 @@ const httpMessages = {
         message: 'That email address already exists.'
     },
     onUserSaveSuccess: {
-        succes: true,
+        success: true,
         message: 'successfully create new user.'
     }
 }

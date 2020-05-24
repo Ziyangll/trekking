@@ -1,5 +1,10 @@
 'use strict';
 
+const dotenv = require('dotenv').config();
+const psw = process.env.PSW
+const usr = process.env.USR
+
 module.exports = {
-    'database': `mongodb+srv://HikingApp:fcBt4zDB6btntGZ@hikingapp-nl4jx.mongodb.net/test?retryWrites=true&w=majority`
+    'secret': 'putsomethingsecrethere',
+    'database': `mongodb+srv://${usr}:${psw}@hikingapp-nl4jx.mongodb.net/test?retryWrites=true&w=majority`
 };

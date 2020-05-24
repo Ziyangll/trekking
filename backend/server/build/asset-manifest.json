@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.da24f38a.chunk.css",
+    "main.js": "/static/js/main.692c5186.chunk.js",
+    "main.js.map": "/static/js/main.692c5186.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.fc75219d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.fc75219d.js.map",
+    "static/js/2.e7a32989.chunk.js": "/static/js/2.e7a32989.chunk.js",
+    "static/js/2.e7a32989.chunk.js.map": "/static/js/2.e7a32989.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.55685729a019cc469ff94c258967f2fe.js": "/precache-manifest.55685729a019cc469ff94c258967f2fe.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.da24f38a.chunk.css.map": "/static/css/main.da24f38a.chunk.css.map",
+    "static/js/2.e7a32989.chunk.js.LICENSE.txt": "/static/js/2.e7a32989.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Group 3.40da0614.svg",
+    "static/media/layout.svg": "/static/media/layout.49d51588.svg",
+    "static/media/nature.jpg": "/static/media/nature.b3571d3c.jpg",
+    "static/media/trek.png": "/static/media/trek.b699d890.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fc75219d.js",
+    "static/js/2.e7a32989.chunk.js",
+    "static/css/main.da24f38a.chunk.css",
+    "static/js/main.692c5186.chunk.js"
+  ]
+}

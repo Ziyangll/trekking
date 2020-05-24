@@ -8,8 +8,10 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
 const cors = require('cors');
 const path = require('path');
+const dotenv = require('dotenv').config();
 
 module.exports = function () {
     let server = express(),
@@ -25,17 +27,21 @@ module.exports = function () {
         server.set('hostname', config.hostname);
 
         //return middleware that parses json
+        server.use(express.static(path.join(__dirname, 'build')));
         server.use(cors());
         server.use(bodyParser.json());
         server.use(bodyParser.urlencoded({ extended: false }));
         server.use(cookieParser());
         server.use(logger('dev'));
         server.use(passport.initialize());
-        //render the front end
-        server.use(express.static(path.join(__dirname, 'build')));
-        //require('./configs/passport')(passport);
-        mongoose.connect(db.database, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, console.log(db.database));
-
+        server.use(passport.session());
+        require('../configs/passport')(passport);
+        server.use(cookieSession({
+            name: 'session',
+            keys: ['key1', 'key2']
+          }))
+        mongoose.connect(db.database, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+        
         //set up routes
         routes.init(server);
     };
