@@ -35,6 +35,7 @@ nav {
   align-items: center;
   width: 100%;
   padding-top: 10px;
+  padding-bottom: 30px;
   margin: 0 auto;
   justify-content: space-between;
   color: #111;
@@ -93,12 +94,13 @@ header div p {
 header img {
   position: absolute;
   z-index: -1;
-  width: 1630px;
-  right: -50%;
-  top: -20px;
+  top: 20px;
+  
+ 
 }
 
-header div a {
+header div a, .submit-btn {
+
   padding: 20px;
   display: block;
   margin-top: 70px;
@@ -110,12 +112,12 @@ header div a {
   text-decoration: none;
 }
 
-header div a, .newsletter input[type="submit"] {
+header div a, .newsletter input[type="submit"], .submit-btn {
   border: 1px solid blue;
   color: blue;
 }
 
-header div a:hover, .newsletter input[type="submit"]:hover {
+header div a:hover, .newsletter input[type="submit"]:hover, .submit-btn:hover {
   background: blue;
   color: #eee;  
 }
@@ -263,8 +265,8 @@ h3 {
 
 @media screen and (max-width: 1600px){
   header img {
-    width: 1230px;
-    right: -50%;
+    
+    
     top: -20px;
   }
 }

@@ -5,6 +5,7 @@ import Main from './components/Main';
 import Contact from './components/Contact';
 
 import Thanks from './components/Thanks';
+import Packer from './components/packing';
 
 const Routes = () => (
   <Switch>
@@ -12,6 +13,7 @@ const Routes = () => (
     <Route exact path="/contact" component={Contact} />
 
     <Route exact path="/thanks/:name" component={Thanks} />
+    <Route exact path = "/packing" component = {Packer}/>
   </Switch>
 );
 
