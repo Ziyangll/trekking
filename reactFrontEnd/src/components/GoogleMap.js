@@ -23,7 +23,7 @@ function setCenter(position) {
   };
 }
 
-let trailData;
+let realTrailData;
 // get trail data
 fetch(
   `https://www.hikingproject.com/data/get-trails?lat=${center.lat}&lon=${center.lng}&maxDistance=20&key=${process.env.REACT_APP_TRAIL_API_KEY}`
@@ -55,7 +55,7 @@ function Map() {
       defaultCenter={center}
       defaultOptions={{ styles: mapStyles }}
     >
-      {trailData.trails.map((trail) => (
+      {realTrailData.trails.map((trail) => (
         <Marker
           key={trail.id}
           position={{
