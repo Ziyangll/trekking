@@ -24,13 +24,18 @@ const Main = () => {
     return(
         <React.Fragment>
             <header>
-                <img src={layout} />
+                
                 <div>
                     <h1>We design &amp; create <br/> trekking trips.</h1>
                     <p>Get away from the hustle and bustle of city life, explore what the nature has to offer. Trekking Team will let you know the destination, packing list. So jet off and explore nature! </p>
                     <Link to="/contact">Explore now</Link>
                 </div>
-          
+                <img style={{ 
+                    width: "100%",
+                    height: "auto",
+                    opacity: "0.3",}}
+                    src= "https://cdn.dribbble.com/users/1355613/screenshots/6441984/landscape.jpg" />
+                
             </header>
 
 
