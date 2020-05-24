@@ -105,13 +105,18 @@ header div a, .submit-btn {
   text-decoration: none;
 }
 
-header div a, .newsletter input[type="submit"], .submit-btn {
-  border: 1px solid blue;
-  color: blue;
+
+header div a, .newsletter input[type="submit"] {
+  border: 1px solid rgb(158, 109, 19);
+  color: rgb(68, 48, 10);
+  background: rgb(240, 209, 169);
+  
+  text-indent: 0px;
+  color: rgb(85, 57, 4);
 }
 
-header div a:hover, .newsletter input[type="submit"]:hover, .submit-btn:hover {
-  background: blue;
+header div a:hover, .newsletter input[type="submit"]:hover {
+  background: burlywood;
   color: #eee;  
 }
 
@@ -205,7 +210,7 @@ h3 {
 
 .newsletter input[type="submit"]{
   width: 170px;
-  color: blue;
+  color: rgb(85, 57, 4);
  
   cursor: pointer;
 }
@@ -236,13 +241,14 @@ h3 {
 }
 
 .contact input[type="submit"] {
-  background: blue;
+  background: burlywood;
   width: 30%;
   text-indent: 0px;
-  color: #eee;
+  color: rgb(85, 57, 4);
   font-size: 20px;
   border-radius: 40px;
   margin: 40px 0px 0px auto;
+  align-items: flex-start;
 }
 
 .back {
@@ -254,6 +260,7 @@ h3 {
   margin-top: 50px;
   cursor: pointer;
   color: blue;
+  align-items: center;
 }
 
 @media screen and (max-width: 1600px){
@@ -320,6 +327,7 @@ h3 {
 
   .contact input[type="submit"] {
     width: 40%;
+    align-items: center;
   }
   
 }
@@ -347,13 +355,14 @@ h3 {
   }
 
   .contact {
-    width: 90%;
+    width: 50%;
   }
   
   .contact input[type="submit"] {
    
     width: 100%;
     margin: 40px 0px;
+    align-items: center;
   }
   
 }

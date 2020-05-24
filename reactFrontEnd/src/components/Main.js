@@ -2,8 +2,12 @@ import React, {useState} from 'react';
 import layout from '../layout.svg';
 
 import { Link, useHistory } from "react-router-dom";
+import firebase from "../firebase/config";
 
 const Main = () => {
+
+
+   
 
     const [joined, setJoined] = useState("");
     const history = useHistory();
@@ -18,7 +22,6 @@ const Main = () => {
         }
 
     }
-
 
 
     return(
