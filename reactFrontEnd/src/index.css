@@ -35,6 +35,7 @@ nav {
   align-items: center;
   width: 100%;
   padding-top: 10px;
+  padding-bottom: 30px;
   margin: 0 auto;
   justify-content: space-between;
   color: #111;
@@ -86,9 +87,9 @@ header div p {
 header img {
   position: absolute;
   z-index: -1;
-  width: 1630px;
-  right: -50%;
-  top: -20px;
+  top: 20px;
+  
+ 
 }
 
 header div a, .submit-btn {
@@ -257,8 +258,8 @@ h3 {
 
 @media screen and (max-width: 1600px){
   header img {
-    width: 1230px;
-    right: -50%;
+    
+    
     top: -20px;
   }
 }
