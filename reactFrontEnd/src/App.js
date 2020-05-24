@@ -1,7 +1,4 @@
 import React, { useEffect, useState} from 'react';
-import nature from './nature.jpg';
-import trek from './trek.png';
-//import './App.css';
 import Routes from "./routes";
 import { Link, useHistory } from 'react-router-dom';
 
