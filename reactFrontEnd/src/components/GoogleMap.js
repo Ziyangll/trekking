@@ -6,7 +6,7 @@ import {
   Marker,
   InfoWindow,
 } from "react-google-maps";
-import * as trailData from "./data/sample_trails.json";
+//import * as trailData from "./data/sample_trails.json";
 import mapStyles from "./mapStyles";
 
 let center = { lat: 33.518589, lng: -86.810356 };
@@ -19,6 +19,15 @@ function setCenter(position) {
     lng: position.coords.longitude,
   };
 }
+
+let realTrailData;
+// get trail data
+fetch(
+  `https://www.hikingproject.com/data/get-trails?lat=${center.lat}&lon=${center.lng}&maxDistance=20&key=${process.env.REACT_APP_TRAIL_API_KEY}`
+)
+  .then((res) => res.json())
+  .then((data) => (realTrailData = data))
+  .then(() => console.log(realTrailData));
 
 function Map() {
   const [selectedTrail, setSelectedTrail] = useState(null);
@@ -42,7 +51,7 @@ function Map() {
       defaultCenter={center}
       defaultOptions={{ styles: mapStyles }}
     >
-      {trailData.trails.map((trail) => (
+      {realTrailData.trails.map((trail) => (
         <Marker
           key={trail.id}
           position={{
