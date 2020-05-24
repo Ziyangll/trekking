@@ -91,7 +91,8 @@ header img {
   top: -20px;
 }
 
-header div a {
+header div a, .submit-btn {
+
   padding: 20px;
   display: block;
   margin-top: 70px;
@@ -103,12 +104,12 @@ header div a {
   text-decoration: none;
 }
 
-header div a, .newsletter input[type="submit"] {
+header div a, .newsletter input[type="submit"], .submit-btn {
   border: 1px solid blue;
   color: blue;
 }
 
-header div a:hover, .newsletter input[type="submit"]:hover {
+header div a:hover, .newsletter input[type="submit"]:hover, .submit-btn:hover {
   background: blue;
   color: #eee;  
 }
